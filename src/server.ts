@@ -1,7 +1,7 @@
 import http from 'http';
 import express, { Express } from 'express';
 import morgan from 'morgan';
-import loginRoute from './routes/loginRoutes';
+import accountRoutes from './routes/accountRoutes';
 
 const router: Express = express();
 
@@ -11,7 +11,7 @@ router.use(express.json());
 
 
 /** Routes */
-router.use('/login', loginRoute);
+router.use('/account', accountRoutes);
 
 /** Error handling */
 router.use((req, res, next) => {

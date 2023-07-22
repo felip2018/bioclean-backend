@@ -1,11 +1,10 @@
 import { Request, Response } from 'express';
 import database from '../services/dabataseService';
 
-class LoginController {
+class AccountController {
 
-    public async startSession(rq: Request, rs: Response) {
+    public async login(rq: Request, rs: Response) {
         try {
-            
             const conn = database.connection();
             const response = await database.runQuery(conn, 'SELECT * FROM tipo_documento;');
             conn.end();
@@ -19,5 +18,5 @@ class LoginController {
     }
 
 }
-const loginController = new LoginController();
-export default loginController;
+const accountController = new AccountController();
+export default accountController;
