@@ -15,8 +15,8 @@ class Database {
     }
 
     public async runQuery(conn: mysql.Connection, sql: string) {
-        return new Promise((resolve, reject)=>{
-            conn.query(sql,function(err, results,  fields){
+        return new Promise((resolve, reject) => {
+            conn.query(sql, function(err, results,  fields){
                 try {
                     resolve(results);
                 } catch (error) {
